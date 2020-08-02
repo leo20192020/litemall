@@ -89,5 +89,13 @@ public class WxFeedbackController {
 
         return ResponseUtil.ok();
     }
+    
+    @RequestMapping("delete")
+    public Object delete(Integer userId) {
+    	if(userId == null) {
+    		return ResponseUtil.unlogin();
+    	}
+    	return feedbackService.delete(userId);
+    }
 
 }

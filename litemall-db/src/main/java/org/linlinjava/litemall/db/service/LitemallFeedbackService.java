@@ -45,4 +45,8 @@ public class LitemallFeedbackService {
         PageHelper.startPage(page, limit);
         return feedbackMapper.selectByExample(example);
     }
+    
+    public Integer delete(Integer userId) {
+    	return feedbackMapper.deleteByUserId(userId);
+    }
 }
